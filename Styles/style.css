@@ -1,0 +1,65 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #1B998B;
+}
+html{
+    font-size: 100%;
+}
+h1{
+    color: white;
+    font-family: sans-serif;
+    position: absolute;
+    top: 50px;
+    text-align: justify;
+    padding: 10px;
+}
+h2{
+    color: white;
+    font-family: sans-serif;
+    position: absolute;
+    top: 420px;
+    text-align: justify;
+    padding: 10px;
+}
+
+.video{
+    position: absolute;
+    top: 80px;
+    left: 300px;
+    right: 150px;
+}
+.instagram{
+    width: 30px;
+}
+footer{
+    position: sticky;
+    bottom: 0;
+    font-family: Arial, Helvetica, sans-serif; color: aliceblue;
+    background-color: #E6AF2E;
+    padding-top: 25px;
+    padding-left: 580px;
+    padding-right: 580px;
+    padding-bottom:25px;
+}
+.remera{
+    color: aliceblue;
+    position: absolute;
+    top: 470px;
+    padding: 20px;
+}
+.imgr{
+    width:200px ;
+}
+.campera{
+    color: aliceblue;
+    position: relative;
+    top: 500px;
+    padding: 150px;
+}
+.imgc{
+    width: 200px;
+}

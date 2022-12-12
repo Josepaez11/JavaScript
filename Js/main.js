@@ -1,34 +1,62 @@
-while(true){
-    var precioCosto = parseFloat (prompt ("ingrese el precio del producto"));
-    if(!isNaN(precioCosto) && precioCosto != null && precioCosto != ""){
-        break;
-    } else{
-        alert("no es numero");
-        continue
+class producto {
+    constructor(producto,precio,talle,cantidad){
+        this.producto = producto;
+        this.precio = parseFloat (precio);
+        this.talle = talle;
+        this.cantidad = cantidad;
+        this.disponible = true;
+    }
+    sumarIva() {
+        return this.precio * 1.21;
+    }
+    vender(){
+        this.disponible = false;
     }
 }
-precioCostoM = precioCosto.toFixed(2);
-alert ("El precio a calcular es:" +precioCostoM);
-console.log("El precio a calcular es:" +precioCostoM);
-document.write ("<h2>El precio a calcular es:" +precioCostoM+ "</h2>");
-
-function CalcularIva (precioCosto){
-return (precioCosto * 0.21)
+var arrayProductos = [];
+do{
+    var comprobacion = prompt ('Ingresar nombre del producto');
+    if (comprobacion === "listo" ||comprobacion === "LISTO" ||comprobacion === "Listo"){
+        break;
+    }else{
+        nombreProd = comprobacion;
+        var precioProd =prompt ('Ingresar precio de producto')
+        var talleProd =prompt ('Ingresar talle de producto')
+        var cantidadProd =prompt ('Ingresar cantidad de productos')
+    }
 }
-var iva = CalcularIva (precioCosto);
-ivaC = iva.toFixed(2);
+while (comprobacion != "listo"|| comprobacion != "LISTO" || comprobacion != "Listo")
 
-alert ("El costo de IVA es:" +ivaC);
-console.log ("El costo de IVA es:" +ivaC);
-document.write("<h2>El costo de IVA es:" +ivaC+ "</h2>");
+console.log(arrayProductos);
 
-function PrecioTotal(precioCosto){
-    return (precioCosto + (precioCosto * 0.21));
+for (var producto of arrayProductos){
+    document.write("<ul><li><h3>Producto: " + producto.producto + "</h3></li></ul>");
+    document.write("<li><h3>Talle: " + producto.talle + "</h3></li>");
+    document.write("<li><h3>Cantidad: " + producto.cantidad + "</h3></li>");
+    document.write("<li><h3>Precio: " + producto.precio + "</h3></li>");
+    console.log(producto.producto);
+    console.log(producto.talle);
+    console.log(producto.cantidad);
+    console.log(producto.precio);
 }
 
-var PrecioConIva = PrecioTotal(precioCosto);
-PrecioConIvaC = PrecioConIva.toFixed(2);
 
-alert("El precio total es:" + PrecioConIvaC);
-console.log("El precio total es:" +PrecioConIvaC);
-document.write("<h2>El precio total es:" +PrecioConIvaC+ "</h2>");
+var sinStock = arrayProductos.filter(producto => producto.cantidad == 0 || producto.disponible == false);
+console.log(sinStock);
+document.write("<h3>Sin stock</h3>");
+
+for (var producto of sinStock){
+    document.write("<ul><li><h3>Producto: " + producto.producto + "</h3></li></ul>");
+    document.write("<li><h3>Talle: " + producto.talle + "</h3></li>");
+    document.write("<li><h3>Precio: " + producto.cantidad + "</h3></li>"); 
+}
+var ingresado = prompt('Buscar producto');
+var prodIngresado = arrayProductos.filter(producto => producto.producto.includes(ingresado));
+console.log(prodIngresado);
+document.write("<h2>Busqueda de productos</h2>");
+
+for (var producto of prodIngresado){
+    document.write("<ul><li><h3>Producto: " + producto.producto + "</h3></li></ul>");
+    document.write("<li><h3>Talle: " + producto.talle + "</h3></li>");
+    document.write("<li><h3>Precio: " + producto.precio + "</h3></li>"); 
+}
