@@ -28,9 +28,6 @@ do{
 while (comprobacion != "listo"|| comprobacion != "LISTO" || comprobacion != "Listo")
 
 console.log(arrayProductos);
-for (let arrayProductos = 0; arrayProductos < 5; arrayProductos++) {
-    console.log('Cinco veces');
-}
 
 for (let Producto of arrayProductos){
     document.write("<ul><li><h3>Producto: " + producto.producto + "</h3></li></ul>");
